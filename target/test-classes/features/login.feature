@@ -1,6 +1,7 @@
 
 Feature: Login facebook's page
 
+
   @aUser
   Scenario: The a user does a Login successfully
     Given The user open facebook's page

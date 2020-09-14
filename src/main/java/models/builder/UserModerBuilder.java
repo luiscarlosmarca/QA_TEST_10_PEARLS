@@ -1,7 +1,7 @@
 package models.builder;
 
 import models.UserModel;
-import ui.Builder;
+import utils.Builder;
 
 public class UserModerBuilder implements Builder<UserModel> {
 

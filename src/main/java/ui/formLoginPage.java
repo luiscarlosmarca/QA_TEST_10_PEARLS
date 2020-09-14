@@ -2,7 +2,7 @@ package ui;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-public class formLoginUI {
+public class formLoginPage {
 
     public static final Target TXT_USERNAME =  Target.the("Text box for into username")
             .locatedBy("//input[@id='email']");

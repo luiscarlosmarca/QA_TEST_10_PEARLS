@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 
 import static models.builder.UserModerBuilder.newUser;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static ui.formLoginUI.*;
+import static ui.formLoginPage.*;
 
 public class doLogin implements Task {
 

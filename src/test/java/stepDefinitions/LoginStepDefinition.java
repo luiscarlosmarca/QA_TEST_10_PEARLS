@@ -23,7 +23,7 @@ public class LoginStepDefinition {
   private String pageFacebook="https://www.facebook.com/";
   @Before
   public void prepareStage() {
-    luis = Actor.named("web");
+    luis = Actor.named("FacebookUser");
     OnStage.setTheStage(new OnlineCast());
   }
   @Given("The user open facebook's page")
@@ -43,4 +43,6 @@ public class LoginStepDefinition {
   public void enterUsernameAndPass(String username, String pass) {
     luis.attemptsTo(doLogin.inFacebook(newUser().withUser(username).withPass(pass).build()));
   }
+
+
 }

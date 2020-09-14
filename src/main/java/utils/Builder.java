@@ -1,4 +1,4 @@
-package ui;
+package utils;
 
 public interface Builder<T> {
     T build();
