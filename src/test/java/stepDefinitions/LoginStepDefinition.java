@@ -1,15 +1,17 @@
 package stepDefinitions;
 
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.thucydides.core.annotations.Managed;
-import org.openqa.selenium.WebDriver;
+
+import tasks.doLogin;
+import utils.MyWebDriverFactory;
 
 public class LoginStepDefinition {
   protected static Actor luis;
@@ -17,23 +19,15 @@ public class LoginStepDefinition {
   @Before
   public void prepareStage() {
     luis = Actor.named("web");
-    luis.can(BrowseTheWeb.with(MyWebDriverFactory.web().onPage(pageFacebook)));
     OnStage.setTheStage(new OnlineCast());
   }
-
-
-
   @Given("The user open facebook's page")
     public void theUserOpenFacebookPage(){
-    luis.attemptsTo(
-            IniciarSession.enElPortalDeGestiondeDispostivos()
-    );
-
+    luis.can(BrowseTheWeb.with(MyWebDriverFactory.web().onPage(pageFacebook)));
   }
-
   @When("into the acces data")
   public void intoTheAccesData() {
-
+    luis.attemptsTo(doLogin.inFacebook());
   }
 
   @Then("The user redirected to the home page")
