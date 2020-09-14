@@ -29,8 +29,8 @@ public class LoginStepDefinition {
     public void theUserOpenFacebookPage(){
     luis.can(BrowseTheWeb.with(MyWebDriverFactory.web().onPage(pageFacebook)));
   }
-  @When("into the access data")
-  public void intoTheAccessData() {
+  @When("enter the access data")
+  public void enterTheAccessData() {
     luis.attemptsTo(doLogin.inFacebook());
   }
   @Then("The user redirected to the home page")
