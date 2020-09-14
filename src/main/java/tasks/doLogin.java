@@ -15,8 +15,8 @@ public class doLogin implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Enter.theValue("luiscarlosmarca").into(TXT_USERNAME));
-        actor.attemptsTo(Enter.theValue("0880luixkg12").into(TXT_PASSWORD));
+        actor.attemptsTo(Enter.theValue("3016827692").into(TXT_USERNAME));
+        actor.attemptsTo(Enter.theValue("test1234").into(TXT_PASSWORD));
         actor.attemptsTo(Click.on(BTN_LOGIN));
 
     }

@@ -27,6 +27,7 @@
         <serenity.version>2.3.4</serenity.version>
         <serenity.cucumber.version>1.9.51</serenity.cucumber.version>
         <webdriver.driver>firefox</webdriver.driver>
+
     </properties>
 
     <dependencies>

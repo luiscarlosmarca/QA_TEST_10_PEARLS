@@ -10,6 +10,10 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import questions.TheHome;
 import tasks.doLogin;
 import utils.MyWebDriverFactory;
 
@@ -25,13 +29,13 @@ public class LoginStepDefinition {
     public void theUserOpenFacebookPage(){
     luis.can(BrowseTheWeb.with(MyWebDriverFactory.web().onPage(pageFacebook)));
   }
-  @When("into the acces data")
-  public void intoTheAccesData() {
+  @When("into the access data")
+  public void intoTheAccessData() {
     luis.attemptsTo(doLogin.inFacebook());
   }
-
   @Then("The user redirected to the home page")
   public void theUserRedirectedToTheHomePage() {
+    luis.should(seeThat(TheHome.PageOfFacebook()));
   }
 
 }
