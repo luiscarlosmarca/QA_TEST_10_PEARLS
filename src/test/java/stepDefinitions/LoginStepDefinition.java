@@ -38,4 +38,8 @@ public class LoginStepDefinition {
     luis.should(seeThat(TheHome.PageOfFacebook()));
   }
 
+  @When("^enter (.*) and (.*)$")
+  public void enterUsernameAndPass(String username, String pass) {
+
+  }
 }
