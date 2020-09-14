@@ -1,30 +1,34 @@
 package tasks;
 
+import models.UserModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
+import static models.builder.UserModerBuilder.newUser;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static ui.formLoginUI.*;
 
 public class doLogin implements Task {
 
-    private String username="3016827692";
-    private String pass="test1234";
+   private UserModel user;
 
+    public doLogin(UserModel user) {
+        this.user = user;
+    }
 
     public static doLogin inFacebook() {
-        return instrumented(doLogin.class);
+        return instrumented(doLogin.class,newUser().ForDefault().build());
     }
-    public static doLogin inFacebook(String username, String pass) {
-        return instrumented(doLogin.class);
+    public static doLogin inFacebook(UserModel user) {
+        return instrumented(doLogin.class,user);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Enter.theValue(username).into(TXT_USERNAME));
-        actor.attemptsTo(Enter.theValue(pass).into(TXT_PASSWORD));
+        actor.attemptsTo(Enter.theValue(user.getUsername()).into(TXT_USERNAME));
+        actor.attemptsTo(Enter.theValue(user.getPass()).into(TXT_PASSWORD));
         actor.attemptsTo(Click.on(BTN_LOGIN));
 
     }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Login facebook's page" skipped="0" tests="2" time="61.59" timestamp="2020-09-13 11:13:56"><testcase name="The user does a Login successfully"><error type="java.lang.NullPointerException"/><system-err>null
+tasks.doLogin.inFacebook(doLogin.java:22)
+stepDefinitions.LoginStepDefinition.enterTheAccessData(LoginStepDefinition.java:35)
+✽.enter the access data(src/test/resources/features/login.feature:7)
+</system-err></testcase><testcase name="Some users does a Login successfully"/></testsuite>

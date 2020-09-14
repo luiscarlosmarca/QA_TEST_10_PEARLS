@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import static models.builder.UserModerBuilder.newUser;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -35,11 +36,11 @@ public class LoginStepDefinition {
   }
   @Then("The user redirected to the home page")
   public void theUserRedirectedToTheHomePage() {
-    luis.should(seeThat(TheHome.PageOfFacebook()));
+    //luis.should(seeThat(TheHome.PageOfFacebook()));
   }
 
   @When("^enter (.*) and (.*)$")
   public void enterUsernameAndPass(String username, String pass) {
-
+    luis.attemptsTo(doLogin.inFacebook(newUser().withUser(username).withPass(pass).build()));
   }
 }
